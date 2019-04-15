@@ -1,1 +1,1 @@
-web: gunicorn morena96.wsgi
+web: gunicorn Morena.wsgi
