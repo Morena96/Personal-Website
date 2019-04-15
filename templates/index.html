@@ -1,19 +1,40 @@
+{% extends 'base.html' %}
 
-<style type="text/css">
-	b{
-		font-family: calibri;
-		font-size: 220px;
-	}
-	#a{
-		transform: translate3d(-88px,-635px,100px);
-	}
-</style>
+{% block title%}
+	Baş sahypa
+{% endblock %}
 
-<body style="background: green">
-<div style="border: 1px dashed black;width: 1000px;height: 640px;background: blue;border-radius: 50px">
-<b style="border-radius: 50px;color:white;">Dowlet</b>
-</div>
-<div id='a' style="border: 1px dashed black;width: 1350px;height: 635px;border-radius: 50px">
-<b style="border-radius: 50px;margin-left:100px;color:black; ">Dowlet</b>
-</div>
-<body>
+{% block body%}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" href="#">MBlog</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="#">Baş sahypa <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Ssylka</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link disabled" href="#">Disabled</a>
+			</li>
+		  </ul>
+		  <form class="form-inline mt-2 mt-md-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="Gözle" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Gözle</button>
+		  </form>
+		</div>
+	  </nav>
+  
+	  <main role="main" class="container">
+		<div class="jumbotron">
+		  <h1>Navbar example</h1>
+		  <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+		  <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+		</div>
+	  </main>
+{% endblock %}
