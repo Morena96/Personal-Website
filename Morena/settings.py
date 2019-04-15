@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'sl299dz=u1t+!vr1xt$69c$u7hx_s8!b#%x-bbr5jprn#cnuu2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,6 +117,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+MEDIA_URL = '/media/'
+STATIC_ROOT= os.path.join(BASE_DIR,'static/')
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 django_heroku.settings(locals())
