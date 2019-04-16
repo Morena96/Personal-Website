@@ -2,17 +2,19 @@
 <html>
 	<head>
 		<title>
-            {% block title%}
-            {%endblock%}
-        </title>
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+                {% block title%}
+                {%endblock%}
+                </title>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta charset="UTF-8">
+                <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
         {%block css%}
         {%endblock%}
 	</head>
 	<body>
         {% block body %}
         {% endblock %}
-        <script src="{% static 'bootstrap/js/bootstrap.js'%}"></script>
         {% block js%}
         {% endblock%}
 	</body>
