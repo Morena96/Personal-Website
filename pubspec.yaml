@@ -63,6 +63,13 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/icons/technologies/agile/
+    - assets/icons/technologies/databases/
+    - assets/icons/technologies/frameworks/
+    - assets/icons/technologies/operating_systems/
+    - assets/icons/technologies/programming_languages/
+    - assets/icons/technologies/tools/
+    
 
   fonts:
     - family: Indie Flower

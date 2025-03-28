@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/home/home_page.dart';
+import 'package:personal_website/screens/home/home_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomePage(),
+      title: 'Software Engineer | Dovlet',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.black,
         textTheme: TextTheme.of(

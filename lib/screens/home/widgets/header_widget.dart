@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // ignore: deprecated_member_use, avoid_web_libraries_in_flutter
 import 'dart:html' as html;
-import 'package:personal_website/home/widgets/social_icons.dart';
+import 'package:personal_website/screens/home/widgets/social_icons.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});

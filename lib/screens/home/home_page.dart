@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/home/widgets/about_me.dart';
-import 'package:personal_website/home/widgets/header_widget.dart';
+import 'package:personal_website/screens/home/widgets/about_me.dart';
+import 'package:personal_website/screens/home/widgets/header_widget.dart';
+import 'package:personal_website/screens/home/widgets/technologies_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,8 +17,8 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Expanded(child: AboutMe()),
-              SizedBox(width: 30),
-              Expanded(child: Container()),
+              SizedBox(width: 100),
+              Expanded(child: TechnologiesWidget()),
             ],
           ),
         ],
