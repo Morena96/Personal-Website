@@ -13,7 +13,6 @@ class AboutMe extends StatelessWidget {
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
             fontFamily: 'Indie Flower',
           ),
         ),

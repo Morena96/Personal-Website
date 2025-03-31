@@ -9,12 +9,12 @@ class TechnologiesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: allTechnologies.map(toElement).toList(),
+      children: allTechnologies.map((e) => toElement(e, context)).toList(),
     );
   }
 }
 
-Widget toElement(Technologies technologies) {
+Widget toElement(Technologies technologies, BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -36,7 +36,12 @@ Widget toElement(Technologies technologies) {
                 e.icon,
                 height: 30,
                 width: 30,
-                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : Colors.black,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),

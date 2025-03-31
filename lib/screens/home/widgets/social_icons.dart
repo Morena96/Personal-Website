@@ -27,7 +27,12 @@ class SocialIcons extends StatelessWidget {
             icon,
             height: 32,
             width: 32,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
+              BlendMode.srcIn,
+            ),
           ),
           SizedBox(width: 8),
           Text(
@@ -35,7 +40,10 @@ class SocialIcons extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Space Grotesk',
               fontSize: 16,
-              color: Colors.white70,
+              color:
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white70
+                      : Colors.black87,
             ),
           ),
         ],

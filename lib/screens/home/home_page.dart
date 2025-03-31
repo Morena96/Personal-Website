@@ -4,23 +4,41 @@ import 'package:personal_website/screens/home/widgets/header_widget.dart';
 import 'package:personal_website/screens/home/widgets/technologies_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.onThemeToggle});
+
+  final VoidCallback onThemeToggle;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 40),
+      body: Stack(
         children: [
-          HeaderWidget(),
-          SizedBox(height: 40),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          ListView(
+            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 40),
             children: [
-              Expanded(child: AboutMe()),
-              SizedBox(width: 100),
-              Expanded(child: TechnologiesWidget()),
+              HeaderWidget(),
+              SizedBox(height: 40),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(child: AboutMe()),
+                  SizedBox(width: 100),
+                  Expanded(child: TechnologiesWidget()),
+                ],
+              ),
             ],
+          ),
+          Positioned(
+            top: 30,
+            right: 30,
+            child: IconButton(
+              icon: Icon(
+                Theme.of(context).brightness == Brightness.dark
+                    ? Icons.light_mode
+                    : Icons.dark_mode,
+              ),
+              onPressed: onThemeToggle,
+            ),
           ),
         ],
       ),
