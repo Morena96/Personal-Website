@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: _themeMode,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.black12,
         textTheme: const TextTheme().apply(
           bodyColor: Colors.white,
           displayColor: Colors.white,

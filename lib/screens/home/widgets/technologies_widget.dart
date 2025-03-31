@@ -21,7 +21,7 @@ Widget toElement(Technologies technologies, BuildContext context) {
       SelectableText(
         technologies.title,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Tektur',
           fontSize: 28,
           fontWeight: FontWeight.bold,
         ),
@@ -31,23 +31,27 @@ Widget toElement(Technologies technologies, BuildContext context) {
         children: [
           ...technologies.technology.map(
             (e) => Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: SvgPicture.asset(
-                e.icon,
-                height: 30,
-                width: 30,
-                colorFilter: ColorFilter.mode(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white
-                      : Colors.black,
-                  BlendMode.srcIn,
+              padding: EdgeInsets.only(right: 12),
+              child: Tooltip(
+                message: e.name,
+                preferBelow: false,
+                child: SvgPicture.asset(
+                  e.icon,
+                  height: 30,
+                  width: 30,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),
           ),
         ],
       ),
-      SizedBox(height: 6),
+      SizedBox(height: 12),
     ],
   );
 }

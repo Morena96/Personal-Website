@@ -22,6 +22,7 @@ class SocialIcons extends StatelessWidget {
       hoverColor: Colors.transparent,
       onTap: onTap ?? () async => await launchUrl(launchUri),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SvgPicture.asset(
             icon,

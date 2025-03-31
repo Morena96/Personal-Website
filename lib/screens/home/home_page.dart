@@ -22,7 +22,21 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(child: AboutMe()),
-                  SizedBox(width: 100),
+                  SizedBox(width: 50),
+                  SizedBox(
+                    height: 500,
+                    child: VerticalDivider(
+                      color:
+                          Theme.of(context).brightness == Brightness.dark
+                              ? Colors.white54
+                              : Colors.black38,
+                      thickness: 1,
+                      width: 1,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                  ),
+                  SizedBox(width: 50),
                   Expanded(child: TechnologiesWidget()),
                 ],
               ),

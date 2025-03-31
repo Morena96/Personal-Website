@@ -63,6 +63,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/images/
     - assets/icons/
     - assets/icons/technologies/agile/
     - assets/icons/technologies/databases/
@@ -76,6 +77,10 @@ flutter:
     - family: Indie Flower
       fonts:
         - asset: assets/fonts/IndieFlower-Regular.ttf
+          weight: 400
+    - family: Tektur
+      fonts:
+        - asset: assets/fonts/Tektur-Regular.ttf
           weight: 400
     - family: Space Grotesk
       fonts:
