@@ -9,32 +9,40 @@ class TechnologiesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Programming Languages',
-          style: TextStyle(
-            fontFamily: 'Indie Flower',
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(width: 10),
-        Row(
-          children: [
-            ...programmingLanguages.map(
-              (e) => Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: SvgPicture.asset(
-                  e.icon,
-                  height: 40,
-                  width: 40,
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
+      children: allTechnologies.map(toElement).toList(),
     );
   }
+}
+
+Widget toElement(Technologies technologies) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      SelectableText(
+        technologies.title,
+        style: TextStyle(
+          fontFamily: 'Indie Flower',
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      SizedBox(height: 4),
+      Row(
+        children: [
+          ...technologies.technology.map(
+            (e) => Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: SvgPicture.asset(
+                e.icon,
+                height: 30,
+                width: 30,
+                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
+            ),
+          ),
+        ],
+      ),
+      SizedBox(height: 6),
+    ],
+  );
 }

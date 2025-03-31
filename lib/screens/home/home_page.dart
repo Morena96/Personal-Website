@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
           HeaderWidget(),
           SizedBox(height: 40),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(child: AboutMe()),
               SizedBox(width: 100),
