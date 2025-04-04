@@ -7,9 +7,13 @@ class SocialIcons extends StatelessWidget {
   final String icon;
   final String text;
   final VoidCallback? onTap;
+  final double height;
+  final double width;
 
   const SocialIcons({
     super.key,
+    this.height = 32,
+    this.width = 32,
     required this.launchUri,
     required this.icon,
     required this.text,
@@ -21,33 +25,20 @@ class SocialIcons extends StatelessWidget {
     return InkWell(
       hoverColor: Colors.transparent,
       onTap: onTap ?? () async => await launchUrl(launchUri),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: 32,
-            width: 32,
-            colorFilter: ColorFilter.mode(
-              Theme.of(context).brightness == Brightness.dark
-                  ? Colors.white
-                  : Colors.black,
-              BlendMode.srcIn,
-            ),
+      child: Tooltip(
+        message: text,
+        preferBelow: false,
+        child: SvgPicture.asset(
+          icon,
+          height: height,
+          width: width,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
+            BlendMode.srcIn,
           ),
-          SizedBox(width: 8),
-          Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Space Grotesk',
-              fontSize: 16,
-              color:
-                  Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white70
-                      : Colors.black87,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

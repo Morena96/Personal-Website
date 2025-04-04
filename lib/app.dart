@@ -46,7 +46,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomePage(onThemeToggle: toggleTheme),
@@ -80,6 +79,11 @@ class _MyAppState extends State<MyApp> {
             background: Container(
               color:
                   _themeMode == ThemeMode.dark
+                      ? Colors.black
+                      : _themeMode == ThemeMode.light
+                      ? const Color(0xFFF5F5F5)
+                      : MediaQuery.platformBrightnessOf(context) ==
+                          Brightness.dark
                       ? Colors.black
                       : const Color(0xFFF5F5F5),
             ),
