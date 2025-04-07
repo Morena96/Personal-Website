@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/screens/home/home_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:personal_website/app/services/svg_precache_service.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key, required this.isDark});
@@ -24,6 +25,11 @@ class _MyAppState extends State<MyApp> {
             : widget.isDark == false
             ? ThemeMode.light
             : ThemeMode.system;
+
+    // Precache SVGs
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      SvgPrecacheService.precacheSvgs(context);
+    });
   }
 
   void toggleTheme() {
